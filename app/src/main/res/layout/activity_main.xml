@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    tools:context="com.netease.nosupload.MainActivity">
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView android:text="连接与读取超时(s): "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt1" />
+
+        <EditText android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:text="30"
+            android:textAlignment="center"
+            android:id="@+id/edit_timeout"/>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView android:text="分片大小(k): "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt2" />
+
+        <EditText android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:text="4"
+            android:textAlignment="center"
+            android:id="@+id/edit_piecesize"/>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView android:text="重试次数: "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt3" />
+
+        <EditText android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:text="1"
+            android:textAlignment="center"
+            android:id="@+id/edit_retry_times"/>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView android:text="LBS刷新时间(s):"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt4" />
+
+        <EditText android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:text="1"
+            android:textAlignment="center"
+            android:id="@+id/edit_refresh_time"/>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="select file"
+            android:id="@+id/btn_sel_file"
+            style="@android:style/Widget.Button"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_selected_file"/>
+
+        <Button android:text="init"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:id="@+id/btn_init"
+            style="@android:style/Widget.Button" />
+
+        <ProgressBar
+            android:id="@+id/progress_upload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button android:text="http upload"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:id="@+id/btn_http_upload"
+                style="@android:style/Widget.Button" />
+            <Button android:text="https upload"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:id="@+id/btn_https_upload"
+                style="@android:style/Widget.Button" />
+            <Button android:text="cancel"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:id="@+id/btn_cancel"
+                style="@android:style/Widget.Button" />
+        </LinearLayout>
+
+        <Button android:text="videoQuery"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:id="@+id/btn_query_id"
+            style="@android:style/Widget.Button" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtNetUrl"
+            android:autoLink="web"/>
+    </LinearLayout>
+
+</LinearLayout>
