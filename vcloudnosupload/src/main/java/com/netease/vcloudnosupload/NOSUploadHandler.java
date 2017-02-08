@@ -1,6 +1,6 @@
 package com.netease.vcloudnosupload;
 
-import com.netease.vcloudnosupload.util.CallResult;
+import com.netease.cloud.nos.android.core.CallRet;
 
 import java.util.List;
 
@@ -85,20 +85,20 @@ public class NOSUploadHandler {
          *
          * @param ret
          */
-        void onSuccess(CallResult ret);
+        void onSuccess(CallRet ret);
 
         /**
          *  上传失败后的回调函数
          *
          * @param ret
          */
-        void onFailure(CallResult ret);
+        void onFailure(CallRet ret);
 
         /**
          *  上传取消后的回调函数
          *
          * @param ret
          */
-        void onCanceled(CallResult ret);
+        void onCanceled(CallRet ret);
     }
 }

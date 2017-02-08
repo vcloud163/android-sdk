@@ -15,13 +15,13 @@ Android-SDK 是用于服务器端点播上传的软件开发工具包，提供�
 
 ### 3.1 下载地址
 
-[android sdk 的源码地址](https://github.com/vcloud163/andriod-sdk.git "android sdk 的源码地址")
+[android sdk 的源码地址](https://g.hz.netease.com/vcloud-sdk/VCloudUploadSDK_Android.git "android sdk 的源码地址")
 
 
 ### 3.2 环境准备
 
 - 通过管理控制台->账户信息获取 AppKey ，Accid ，Token。
-- 如果安装了 git 命令行，执行 `git clone https://github.com/vcloud163/andriod-sdk.git` 或者直接在 github 下载 zip 包
+- 如果安装了 git 命令行，执行 `git clone ssh://git@g.hz.netease.com:22222/vcloud-sdk/VCloudUploadSDK_Android.git` 或者直接在 github 下载 zip 包
 - 参照 API 说明和 sdk 中提供的 demo，开发代码。
 
 
@@ -156,4 +156,3 @@ Android-SDK 是用于服务器端点播上传的软件开发工具包，提供�
 **v1.0.0**
 
 Android SDK 的初始版本，提供点播上传的基本功能。包括：文件上传、获取进度、断点续传、查询视频。
-

@@ -2,10 +2,10 @@ package com.netease.nosupload;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -14,12 +14,12 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.netease.cloud.nos.android.core.CallRet;
 import com.netease.cloud.nos.android.exception.InvalidChunkSizeException;
 import com.netease.cloud.nos.android.exception.InvalidParameterException;
 import com.netease.vcloudnosupload.AcceleratorConfig;
 import com.netease.vcloudnosupload.NOSUpload;
 import com.netease.vcloudnosupload.NOSUploadHandler;
-import com.netease.vcloudnosupload.util.CallResult;
 import com.netease.vcloudnosupload.util.FileUtil;
 
 import java.io.File;
@@ -248,7 +248,7 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
                                     }
 
                                     @Override
-                                    public void onSuccess(CallResult ret) {
+                                    public void onSuccess(CallRet ret) {
                                         executor = null;
                                         /**
                                          *  清除该文件对应的uploadcontext
@@ -258,14 +258,14 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
                                     }
 
                                     @Override
-                                    public void onFailure(CallResult ret) {
+                                    public void onFailure(CallRet ret) {
                                         executor = null;
                                         Toast.makeText(MainActivity.this, "upload fail", Toast.LENGTH_SHORT).show();
                                         progressBar.setProgress(0);
                                     }
 
                                     @Override
-                                    public void onCanceled(CallResult ret) {
+                                    public void onCanceled(CallRet ret) {
                                         executor = null;
                                         Toast.makeText(MainActivity.this, "upload cancel", Toast.LENGTH_SHORT).show();
                                         progressBar.setProgress(0);
@@ -349,7 +349,7 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
 
 
                                     @Override
-                                    public void onSuccess(CallResult ret) {
+                                    public void onSuccess(CallRet ret) {
                                         executor = null;
                                         /**
                                          *  上传已经完成, 清除该文件对应的uploadcontext
@@ -359,14 +359,14 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
                                     }
 
                                     @Override
-                                    public void onFailure(CallResult ret) {
+                                    public void onFailure(CallRet ret) {
                                         executor = null;
                                         Toast.makeText(MainActivity.this, "upload fail", Toast.LENGTH_SHORT).show();
                                         progressBar.setProgress(0);
                                     }
 
                                     @Override
-                                    public void onCanceled(CallResult ret) {
+                                    public void onCanceled(CallRet ret) {
                                         executor = null;
                                         Toast.makeText(MainActivity.this, "upload cancel", Toast.LENGTH_SHORT).show();
                                         progressBar.setProgress(0);

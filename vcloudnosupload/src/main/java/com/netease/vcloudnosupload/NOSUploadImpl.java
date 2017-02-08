@@ -18,7 +18,6 @@ import com.netease.cloud.nos.android.exception.InvalidChunkSizeException;
 import com.netease.cloud.nos.android.exception.InvalidParameterException;
 import com.netease.vcloudnosupload.http.HTTPResult;
 import com.netease.vcloudnosupload.http.NOSHTTPPost;
-import com.netease.vcloudnosupload.util.CallResult;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -210,31 +209,22 @@ public class NOSUploadImpl extends NOSUpload {
 
             @Override
             public void onSuccess(CallRet callRet) {
-                CallResult res = new CallResult(callRet.getFileParam(), callRet.getUploadContext(),
-                        callRet.getHttpCode(), callRet.getRequestId(),
-                        callRet.getCallbackRetMsg(), callRet.getResponse(), callRet.getException());
                 if(callback != null){
-                    callback.onSuccess(res);
+                    callback.onSuccess(callRet);
                 }
             }
 
             @Override
             public void onFailure(CallRet callRet) {
-                CallResult res = new CallResult(callRet.getFileParam(), callRet.getUploadContext(),
-                        callRet.getHttpCode(), callRet.getRequestId(),
-                        callRet.getCallbackRetMsg(), callRet.getResponse(), callRet.getException());
                 if(callback != null){
-                    callback.onFailure(res);
+                    callback.onFailure(callRet);
                 }
             }
 
             @Override
             public void onCanceled(CallRet callRet) {
-                CallResult res = new CallResult(callRet.getFileParam(), callRet.getUploadContext(),
-                        callRet.getHttpCode(), callRet.getRequestId(),
-                        callRet.getCallbackRetMsg(), callRet.getResponse(), callRet.getException());
                 if(callback != null){
-                    callback.onCanceled(res);
+                    callback.onCanceled(callRet);
                 }
             }
         });
@@ -266,31 +256,22 @@ public class NOSUploadImpl extends NOSUpload {
 
             @Override
             public void onSuccess(CallRet callRet) {
-                CallResult res = new CallResult(callRet.getFileParam(), callRet.getUploadContext(),
-                        callRet.getHttpCode(), callRet.getRequestId(),
-                        callRet.getCallbackRetMsg(), callRet.getResponse(), callRet.getException());
                 if(callback != null){
-                    callback.onSuccess(res);
+                    callback.onSuccess(callRet);
                 }
             }
 
             @Override
             public void onFailure(CallRet callRet) {
-                CallResult res = new CallResult(callRet.getFileParam(), callRet.getUploadContext(),
-                        callRet.getHttpCode(), callRet.getRequestId(),
-                        callRet.getCallbackRetMsg(), callRet.getResponse(), callRet.getException());
                 if(callback != null){
-                    callback.onFailure(res);
+                    callback.onFailure(callRet);
                 }
             }
 
             @Override
             public void onCanceled(CallRet callRet) {
-                CallResult res = new CallResult(callRet.getFileParam(), callRet.getUploadContext(),
-                        callRet.getHttpCode(), callRet.getRequestId(),
-                        callRet.getCallbackRetMsg(), callRet.getResponse(), callRet.getException());
                 if(callback != null){
-                    callback.onCanceled(res);
+                    callback.onCanceled(callRet);
                 }
             }
         });
