@@ -1,7 +1,6 @@
 package com.netease.nosupload;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -20,11 +19,12 @@ import com.netease.cloud.nos.android.exception.InvalidParameterException;
 import com.netease.vcloudnosupload.AcceleratorConfig;
 import com.netease.vcloudnosupload.NOSUpload;
 import com.netease.vcloudnosupload.NOSUploadHandler;
-import com.netease.vcloudnosupload.util.FileUtil;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+
+
 
 public class MainActivity extends AppCompatActivity implements Button.OnClickListener {
 
@@ -153,9 +153,14 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
         nosUpload.setAcceConfig(acceleratorConf);
         switch (v.getId()) {
             case R.id.btn_sel_file: {
-                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-                intent.setType("*/*");
+                Intent intent = new Intent();
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT){
+                    intent.setAction(Intent.ACTION_OPEN_DOCUMENT);
+                }else {
+                    intent.setAction(Intent.ACTION_GET_CONTENT);
+                }
                 intent.addCategory(Intent.CATEGORY_OPENABLE);
+                intent.setType("*/*");
                 startActivityForResult(intent, 0);
                 break;
             }
@@ -388,7 +393,6 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
         }
         String path = FileUtil.getPath(MainActivity.this, data.getData());
         mFile = new File(path);
-        Uri u = data.getData();
         editSelectedFile.setText(path);
     }
 
