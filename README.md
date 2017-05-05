@@ -52,49 +52,48 @@ Android-SDK 是用于服务器端点播上传的软件开发工具包，提供�
 
 以下是使用示例：
 
-//	从本地的持久化数据中获取该文件对应的上传上下文(根据这个上下文，服务端知道该从哪个offset开始上传)
 		String uploadContext = nosUpload.getUploadContext(mFile);
 		NOSUpload.UploadExecutor executor = nosUpload.putFileByHttp(
-										mFile,				//	文件
-										uploadContext, 		//	用于断点续传的上传上下文
-										mBucket,			//	上传到云存储的bucket
-										mObject, 			//	上传到云存储的object name
-										mNosToken, 			//	上传需要的token, 由uploadInit返回
-										
-										new NOSUploadHandler.UploadCallback() {
-											@Override
-											public void onUploadContextCreate(
-													String oldUploadContext,
-													String newUploadContext) {
-												/**
-												 *  将新的uploadcontext保存起来
-												 */
-												nosUpload.setUploadContext(mFile, newUploadContext);
-											}
+				mFile,				//	文件
+				uploadContext, 		//	用于断点续传的上传上下文
+				mBucket,			//	上传到云存储的bucket
+				mObject, 			//	上传到云存储的object name
+				mNosToken, 			//	上传需要的token, 由uploadInit返回
+				
+				new NOSUploadHandler.UploadCallback() {
+					@Override
+					public void onUploadContextCreate(
+							String oldUploadContext,
+							String newUploadContext) {
+						/**
+						 *  将新的uploadcontext保存起来
+						 */
+						nosUpload.setUploadContext(mFile, newUploadContext);
+					}
 
-											//	上传进度的回调函数
-											@Override
-											public void onProcess(long current, long total) { 
-											}
+					//	上传进度的回调函数
+					@Override
+					public void onProcess(long current, long total) { 
+					}
 
-											@Override
-											public void onSuccess(CallResult ret) {
-												executor = null;
-												/**
-												 *  上传成功后，清除该文件对应的uploadcontext
-												 */
-												nosUpload.setUploadContext(mFile, ""); 
-											}
+					@Override
+					public void onSuccess(CallResult ret) {
+						executor = null;
+						/**
+						 *  上传成功后，清除该文件对应的uploadcontext
+						 */
+						nosUpload.setUploadContext(mFile, ""); 
+					}
 
-											@Override
-											public void onFailure(CallResult ret) { 
-											}
+					@Override
+					public void onFailure(CallResult ret) { 
+					}
 
-											@Override
-											public void onCanceled(CallResult ret) {
-											
-											}
-									});
+					@Override
+					public void onCanceled(CallResult ret) {
+					
+					}
+			});
 
 **注：具体使用示例详见 sdk 包中 MainActivity.java 文件。**
 
@@ -105,18 +104,18 @@ Android-SDK 是用于服务器端点播上传的软件开发工具包，提供�
 以下是使用示例：
 	
 	nosUpload.putFileByHttp(
-						mFile,				//	文件
-						uploadContext, 		//	用于断点续传的上传上下文
-						mBucket,			//	上传到云存储的bucket
-						mObject, 			//	上传到云存储的object name
-						mNosToken, 			//	上传需要的token
-						
-						new NOSUploadHandler.UploadCallback() { 
-							//	上传进度的回调函数
-							@Override
-							public void onProcess(long current, long total) { 
-							} 
-						}
+			mFile,				//	文件
+			uploadContext, 		//	用于断点续传的上传上下文
+			mBucket,			//	上传到云存储的bucket
+			mObject, 			//	上传到云存储的object name
+			mNosToken, 			//	上传需要的token
+			
+			new NOSUploadHandler.UploadCallback() { 
+				//	上传进度的回调函数
+				@Override
+				public void onProcess(long current, long total) { 
+				} 
+			}
 
 **注：具体使用示例详见 sdk 包中 MainActivity.java 文件。**
 

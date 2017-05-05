@@ -41,7 +41,7 @@ public class NOSUploadImpl extends NOSUpload {
     private String APPKEY, ACCID, TOKEN;
     private Context mCtx;
 
-    private final String hostName = "http://106.2.124.84";
+    private final String hostName = "http://vcloud.163.com";
     private final String uploadInit = "/app/vod/upload/init";
     private final String videoQuery = "/app/vod/video/query";
 

@@ -94,10 +94,12 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
         initButtons();
         loadDefaultAcceleratorConf();
         if (nosUpload != null) {
+            /** 这里的accid,token需要用户根据文档 http://dev.netease.im/docs/product/%E9%80%9A%E7%94%A8/%E7%82%B9%E6%92%AD%E9%80%9A%E7%94%A8/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E4%B8%8A%E4%BC%A0%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E
+            中的/app/vod/thirdpart/user/create 接口创建 **/
             NOSUpload.Config config = new NOSUpload.Config();
-            config.appKey = "763e8ab7fe0b462883e1633cb1940d6d";
-            config.accid = "abcdefgh";
-            config.token = "4c1d5942ff0040588931bb244d9761c6d687d526";
+            config.appKey = "55f3fcee14db4682a11e1c633739d314";
+            config.accid = "test_accid_0505";
+            config.token = "b99d5baf7afd461e8b1ca747f112bee80854adf2";
             nosUpload.setConfig(config);
         }
     }
