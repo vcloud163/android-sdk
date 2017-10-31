@@ -28,5 +28,5 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:23.0.0'
     testCompile 'junit:junit:4.12'
-    compile files('libs/nos-android-sdk-allin-2.0.2.jar')
+    compile files('libs/nos-android-sdk-allin-2.0.5.jar')
 }
