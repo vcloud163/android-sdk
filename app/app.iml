@@ -124,7 +124,6 @@
     <orderEntry type="library" exported="" name="play-services-basement-8.4.0" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-23.0.0" level="project" />
     <orderEntry type="module" module-name="vcloudnosupload" exported="" />
-    <orderEntry type="library" exported="" name="nos-android-sdk-allin-2.0.5" level="project" />
     <orderEntry type="library" exported="" name="nos-android-sdk-allin-2.0.2" level="project" />
   </component>
 </module>
