@@ -39,6 +39,9 @@ Android-SDK 是用于服务器端点播上传的软件开发工具包，提供�
 登陆视频云开发者平台，通过管理控制台->账户信息获取 AppKey ，Accid ，Token。
 在获取到 AppKey 和 Accid ，Token 之后，可按照如下方式进行初始化：
 
+    /** 这里的accid,token需要用户根据文档 http://dev.netease.im/docs/product/%E7%82%B9%E6%92%AD/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E4%B8%8A%E4%BC%A0%E6%94%AF%E6%8C%81%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E
+    中的/app/vod/thirdpart/user/create 接口创建 **/
+
 	NosUpload nosUpload = NosUpload.getInstance(context);
 	NOSUpload.Config config = new NOSUpload.Config();
 	config.appKey = "...";
